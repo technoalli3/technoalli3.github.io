@@ -20,7 +20,7 @@ async function renderFronters() {
     fronters.members.forEach(fronter => {
         let avatar
         if (fronter.avatar_url != null) {
-            avatar = `<img src="${fronter.avatar_url}" alt="Profile Picture", style="float:left; padding-right:10px;">`
+            avatar = `<img src="${fronter.avatar_url}" alt="Profile Picture", style="float:left;">`
         }
         else {
             avatar = ``
