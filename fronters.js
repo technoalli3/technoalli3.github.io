@@ -16,10 +16,12 @@ async function renderFronters() {
     if (fronters == null) {
         return
     }
+    
+    let sysid = fronters.id
+    document.getElementById("sysid").innerHTML = sysid
+    
     let html = '';
-    fronters.members.forEach(fronter => {
-        let sysid = fronters.id
-        document.getElementById("sysid").innerHTML = sysid
+    fronters.members.forEach(fronter => {       
         
         let avatar
         if (fronter.avatar_url != null) {
