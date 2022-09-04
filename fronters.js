@@ -11,14 +11,30 @@ async function getFronters() {
     return await response.json()
 }
 
+async function getSystem() {
+    let response = await fetch("https://api.pluralkit.me/v2/systems/" + system);
+    if (response.status != 200) {
+        showInput(response.status)
+        return null
+    }
+    return await response.json()
+}
+
 async function renderFronters() {
     const fronters = await getFronters();
     if (fronters == null) {
         return
     }
     
+    const sysName = await getSystem();
+    if(sysName.name != null) {
+        document.getElementById("tabname").innerHTML = sysName.name + " Fronter Display"
+    } else {
+        document.getElementById("tabname").innerHTML = system + " Fronter Display"
+    }
+    
     document.getElementById("sysid").innerHTML = system
-    document.getElementById("tabname").innerHTML = system + " Fronter Display"
+    
     
     let html = '';
     fronters.members.forEach(fronter => {       
