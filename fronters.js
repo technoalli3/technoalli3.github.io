@@ -36,7 +36,7 @@ async function renderFronters() {
         let htmlSegment = `<div class="fronter">
                             <div style = "padding-right:5px;">${avatar}</div>
                             <h2>${fronter.name}</h2>
-                            <p>fronterPronouns</p>
+                            <p>${fronterPronouns}</p>
                         </div>
                         <br style="clear:both">`;
 
