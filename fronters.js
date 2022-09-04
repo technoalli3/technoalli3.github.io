@@ -18,6 +18,7 @@ async function renderFronters() {
     }
     
     document.getElementById("sysid").innerHTML = system
+    document.getElementById("tabname").innerHTML = system + " Fronter Display"
     
     let html = '';
     fronters.members.forEach(fronter => {       
