@@ -6,7 +6,11 @@ async function getFronters() {
     let response = await fetch("https://api.pluralkit.me/v2/systems/" + system + "/fronters");
     if (response.status != 200) {
         showInput(response.status)
-        return null
+        if(response.status == 404) {
+            return "NO_FRONTER"
+        } else {
+            return null
+        }
     }
     return await response.json()
 }
@@ -15,6 +19,8 @@ async function renderFronters() {
     const fronters = await getFronters();
     if (fronters == null) {
         return
+    } else if(fronters == "NO_FRONTER") {
+        return "There are no fronters right now!"
     }
     
     document.getElementById("sysid").innerHTML = system
