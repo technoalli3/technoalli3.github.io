@@ -27,12 +27,16 @@ async function renderFronters() {
     }
     
     const sysName = await getSystem();
+    const nameContainer = document.getElementById("name-container");
+    
     if(sysName.name != null) {
         document.getElementById("tabname").innerHTML = sysName.name + " Fronter Display"
-        document.getElementById("title").innerHTML = sysName.name + " Fronter Display"
+        
+        nameContainer.innerHTML = `<h1>sysName.name + "Fronter Display"</h1>`
     } else {
         document.getElementById("tabname").innerHTML = system + " Fronter Display"
-        document.getElementById("sysid").innerHTML = system
+        
+        nameContainer.innerHTML = `<code>system</code><h1> Fronter Display</h1>`
     }
     
     
