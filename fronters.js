@@ -12,9 +12,8 @@ async function getFronters() {
 }
 
 async function renderFronters() {
-    const fronters = await getFronters();
     if (fronters == null) {
-        return "There are no fronters right now!"
+        return
     }
     
     document.getElementById("sysid").innerHTML = system
@@ -50,7 +49,6 @@ async function renderFronters() {
 
     let container = document.querySelector('.container');
     container.innerHTML = html;
-}
 
 function showInput(reason) {
     console.log(reason)
