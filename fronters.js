@@ -19,6 +19,10 @@ async function renderFronters() {
     const fronters = await getFronters();
     if (fronters == null) {
         return
+    } else if (fronters == "NO_FRONTER") {
+        return `<div class="fronter">
+                    <h2>There are no fronters right now!</h2>
+                </div>`;
     }
     
     document.getElementById("sysid").innerHTML = system
@@ -51,12 +55,6 @@ async function renderFronters() {
 
         html += htmlSegment;
     });
-    
-    if(fronters == "NO_FRONTER") {
-        html = `<div class="fronter">
-                    <h2>There are no fronters right now!</h2>
-                </div>`;
-    }
 
     let container = document.querySelector('.container');
     container.innerHTML = html;
