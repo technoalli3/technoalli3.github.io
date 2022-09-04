@@ -34,7 +34,7 @@ async function renderFronters() {
         str += " Fronter Diplay";
         
         document.getElementById("tabname").innerHTML = str
-        nameContainer.innerHTML = `<h1>sysName.name + str`
+        nameContainer.innerHTML = `<h1>sysName.name + str</h1>`
     } else {
         document.getElementById("tabname").innerHTML = system + " Fronter Display"
         
