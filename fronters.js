@@ -4,13 +4,11 @@ const container = document.querySelector('.container');
 
 async function getFronters() {
     let response = await fetch("https://api.pluralkit.me/v2/systems/" + system + "/fronters");
+    if (response.status == 404) {
+        return 1
     if (response.status != 200) {
         showInput(response.status)
-        if(response.status == 404) {
-            return "NO_FRONTER"
-        } else {
-            return null
-        }
+        return null
     }
     return await response.json()
 }
@@ -19,10 +17,12 @@ async function renderFronters() {
     const fronters = await getFronters();
     if (fronters == null) {
         return
-    } else if (fronters == "NO_FRONTER") {
-        return `<div class="fronter">
-                    <h2>There are no fronters right now!</h2>
-                </div>`;
+    } else if (fronters == 1) {
+        let fronterContainer = document.querySelector('.container');
+        fronterContainer.innerHTML = `<div class="fronter">
+                                        <h2>There are no fronters right now!</h2>
+                                    </div>`;
+        return
     }
     
     document.getElementById("sysid").innerHTML = system
