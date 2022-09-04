@@ -1,0 +1,17 @@
+img {
+    max-width: 200px;
+    max-height: 200px;
+}
+
+body {
+    background-color: #37393f;
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+}
+
+/* .container {
+    background-color: #2f3136;
+    border-radius: 5px;
+    border-left: 4px solid aqua;
+    width: 300px;
+} */
