@@ -17,7 +17,7 @@ async function renderFronters() {
         return
     }
     
-    let sysid = fronters.id
+    let sysid = fronters.uuid
     document.getElementById("sysid").innerHTML = sysid
     
     let html = '';
