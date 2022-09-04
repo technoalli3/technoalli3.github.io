@@ -32,7 +32,7 @@ async function renderFronters() {
         document.getElementById("sysid").innerHTML = sysName.name
     } else {
         document.getElementById("tabname").innerHTML = system + " Fronter Display"
-        document.getElementById("sysid").innerHTML = system
+        document.getElementById("title-container").innerHTML = `<code>${system}</code><h1> Fronter Display</h1>`
     }
     
     
