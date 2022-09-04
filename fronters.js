@@ -14,7 +14,7 @@ async function getFronters() {
 async function renderFronters() {
     const fronters = await getFronters();
     if (fronters == null) {
-        return
+        return "There are no fronters right now!"
     }
     
     document.getElementById("sysid").innerHTML = system
