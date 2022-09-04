@@ -52,7 +52,7 @@ async function renderFronters() {
             avatar = `<img src="${fronter.avatar_url}" alt="Profile Picture", style="float:left;">`
         }
         else {
-            avatar = ``
+            avatar = `<img href="blank.png" alt="Profile Picture", style="float:left;">`
         }
         
         let fronterPronouns
