@@ -50,6 +50,7 @@ async function renderFronters() {
 
     let container = document.querySelector('.container');
     container.innerHTML = html;
+}
 
 function showInput(reason) {
     console.log(reason)
