@@ -20,7 +20,7 @@ async function renderFronters() {
     fronters.members.forEach(fronter => {
         let avatar
         if (fronter.avatar_url != null) {
-            avatar = `<img src="${fronter.avatar_url}" alt="Profile Picture", style="float:left">`
+            avatar = `<img src="${fronter.avatar_url}" alt="Profile Picture", style="float:left;">`
         }
         else {
             avatar = ``
@@ -30,11 +30,12 @@ async function renderFronters() {
         if(fronter.pronouns != null) {
             fronterPronouns = fronter.pronouns
         } else {
-            fronterPronouns = "This fronter has no pronouns set."
+            fronterPronouns = fronter.display_name
+            //fronterPronouns = "This fronter has no pronouns set."
         }
 
         let htmlSegment = `<div class="fronter">
-                            <div style = "padding-right:5px;">${avatar}</div>
+                            ${avatar}
                             <h2>${fronter.name}</h2>
                             <p>${fronterPronouns}</p>
                         </div>
