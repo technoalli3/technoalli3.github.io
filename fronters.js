@@ -4,9 +4,6 @@ const container = document.querySelector('.container');
 
 async function getFronters() {
     let response = await fetch("https://api.pluralkit.me/v2/systems/" + system + "/fronters");
-    if (response.status == 404) {
-        return 1
-    }
     if (response.status != 200) {
         showInput(response.status)
         return null
@@ -17,12 +14,6 @@ async function getFronters() {
 async function renderFronters() {
     const fronters = await getFronters();
     if (fronters == null) {
-        return
-    } else if (fronters == 1) {
-        let fronterContainer = document.querySelector('.container');
-        fronterContainer.innerHTML = `<div class="fronter">
-                                        <h2>There are no fronters right now!</h2>
-                                    </div>`;
         return
     }
     
