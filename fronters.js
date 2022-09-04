@@ -18,6 +18,9 @@ async function renderFronters() {
     }
     let html = '';
     fronters.members.forEach(fronter => {
+        let sysid = fronters.id
+        document.getElementById("sysid").innerHTML = sysid
+        
         let avatar
         if (fronter.avatar_url != null) {
             avatar = `<img src="${fronter.avatar_url}" alt="Profile Picture", style="float:left;">`
