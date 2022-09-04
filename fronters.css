@@ -1,7 +1,8 @@
 img {
     max-width: 200px;
     max-height: 200px;
-    border: 1px solid #F0F0F0;
+    border: 2px solid #F0F0F0;
+    border-radius: 5%;
 }
 
 body {
