@@ -17,7 +17,7 @@ async function getSystem() {
 }
 
 async function renderTitle() {
-    const sysObject = await getSystem();
+    let sysObject = await getSystem();
     
     let name
     if(sysObject.name != null) {
