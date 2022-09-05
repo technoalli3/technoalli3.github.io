@@ -38,7 +38,6 @@ function renderTitle() {
 }
 
 if (system != null & system != "") {
-    // Display fronters for requested system
-    container.innerHTML = `<code>Loading fronters...</code>`
+    title.innerHTML = `<code>Loading fronters...</code>`
     renderTitle();
 }
