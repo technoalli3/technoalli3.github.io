@@ -16,17 +16,18 @@ async function getSystem() {
 }
 
 async function renderTitle() {
+    let sysObject = await getSystem();
     
     let name
-    if(system.name != null) {
-        name = system.name;
+    if(sysObject.name != null) {
+        name = sysObject.name;
     } else {
         name = system;
     }
     
     let colour
-    if(system.color != null) {
-        colour = system.color;
+    if(sysObject.color != null) {
+        colour = sysObject.color;
     } else {
         colour = "FFFFFF";
     }
@@ -34,6 +35,6 @@ async function renderTitle() {
     title.innerHMTL = `<h1><span style="color: #${colour};">${name}</span> System Info</h1>`
 }
 
-if(system != null % system != "") {
+if(system != null & system != "") {
     renderTitle();
 }
