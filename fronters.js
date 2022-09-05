@@ -93,8 +93,9 @@ async function renderFronters() {
     //back button
     let segment = `<form>
                         <input type="submit" value="Go Back">
-                    </form>`
-    segment += `<form style="float:right;">
+                    </form>
+                    <br>
+                    <form>
                     <input type="submit" value="System members">
                 </form>`
 
