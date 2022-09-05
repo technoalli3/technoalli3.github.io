@@ -97,7 +97,7 @@ function showInput(reason) {
     container.innerHTML = `<form>
                             <label name="sys">${label}</label>
                             <input type="text" name="sys">
-                            <input type="submit">
+                            <input type="submit" value="Submit">
                         </form>`
 }
 
