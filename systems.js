@@ -36,3 +36,9 @@ function renderTitle() {
     
     title.innerHMTL = `<h1><span style="color: #${colour};">${name}</span> System Info</h1>`
 }
+
+if (system != null & system != "") {
+    // Display fronters for requested system
+    container.innerHTML = `<code>Loading fronters...</code>`
+    renderTitle();
+}
