@@ -33,7 +33,7 @@ async function renderTitle() {
         colour = "FFFFFF";
     }
     
-    title.innerHMTL = `<h1><span style="color: #${colour};">${name}</span> System Info</h1>`;
+    title.innerHMTL = `<h1 style="color: #${colour};">System Info</h1>`;
 }
 
 if (system != null & system != "") {
