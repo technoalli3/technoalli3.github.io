@@ -43,7 +43,7 @@ function backButton() {
     let segment = `<form>
                         <input type="submit" value="Go Back">
                     </form>
-                    <!--<br>
+                    <br>
                     <form action="/systems.php">
                         <input type="submit" value="System info">
                     </form>`
