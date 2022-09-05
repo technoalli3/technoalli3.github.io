@@ -3,6 +3,10 @@ const system = new URLSearchParams(queryString).get("sys");
 
 const title = document.getElementById("title");
 
+const sysObject = getSystem();
+renderTitle();
+
+
 
 async function getSystem() {
     let response = await fetch("https://api.pluralkit.me/v2/systems/" + system);
@@ -15,9 +19,7 @@ async function getSystem() {
     return await response.json()
 }
 
-function renderTitle() {
-    let sysObject = await getSystem();
-    
+async function renderTitle() {    
     let name
     if(sysObject.name != null) {
         name = sysObject.name;
