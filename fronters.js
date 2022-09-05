@@ -44,7 +44,7 @@ function backButton() {
                         <input type="submit" value="Go Back">
                     </form>
                     <br>
-                    <form action="/systems.html?${system}" method="post">
+                    <form action="/systems.html?${system}">
                         <button type="submit">System info</button>
                     </form>`
 
