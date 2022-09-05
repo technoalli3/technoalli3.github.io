@@ -95,9 +95,9 @@ async function renderFronters() {
                         <input type="submit" value="Go Back">
                     </form>
                     <br>
-                    <form>
-                    <input type="submit" value="System members">
-                </form>`
+                    <a href="systems.html">
+                        <input type="submit" value="System members">
+                    </a>`
 
     let container = document.querySelector('.container');
     container.innerHTML = html;
