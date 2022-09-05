@@ -96,7 +96,7 @@ async function renderFronters() {
                     </form>
                     <br>
                     <a href="systems.html">
-                        <input type="submit" value="System members">
+                        <input type="submit" value="System info">
                     </a>`
 
     let container = document.querySelector('.container');
