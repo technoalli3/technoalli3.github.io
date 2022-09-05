@@ -79,17 +79,11 @@ async function renderFronters() {
             fronterCreated = dateObject.toLocaleString();
         }
         */
-        
-        let isAlli = false
-        if(system == "jouig") {
-            isAlli = true;
-        }
 
         let htmlSegment = `<div class="fronter">
                             ${avatar}
                             <h2>Name: ${fronter.name}</h2>
                             <p>Pronouns: ${fronterPronouns}</p>
-                            <p>Is Alli?: ${isAlli}</p>
                         </div>
                         <br style="clear:both">`;
 
