@@ -70,11 +70,18 @@ async function renderFronters() {
         } else {//no pronouns
             fronterPronouns = "This fronter has no pronouns set."
         }
+        
+        let fronterCreated
+        if(fronter.created != null) {
+            fronterCreated = fronter.created
+        }
 
         let htmlSegment = `<div class="fronter">
                             ${avatar}
                             <h2>${fronter.name}</h2>
                             <p>${fronterPronouns}</p>
+                            <p>${fronterCreated}</p>
+                            <p>$
                         </div>
                         <br style="clear:both">`;
 
