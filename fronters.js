@@ -75,7 +75,7 @@ async function renderFronters() {
         let fronterCreated
         if(fronter.created != null) {
             dateObject = fronter.created;
-            fronterCreated =  dateObject.toLocaleDateString();
+            fronterCreated =  dateObject.toLocaleString();
         }
 
         let htmlSegment = `<div class="fronter">
