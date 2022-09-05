@@ -31,7 +31,7 @@ async function renderFronters() {
     
     if(sysName.name != null) {
         let str = sysName.name;
-        str += " Fronter Diplay";
+        str += " Fronter Display";
         
         document.getElementById("tabname").innerHTML = str
         nameContainer.innerHTML = `<h1>${str}</h1>`
