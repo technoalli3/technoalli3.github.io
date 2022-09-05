@@ -15,7 +15,7 @@ async function getSystem() {
     return await response.json()
 }
 
-async function renderTitle() {
+function renderTitle() {
     let sysObject = await getSystem();
     
     let name
@@ -33,8 +33,4 @@ async function renderTitle() {
     }
     
     title.innerHMTL = `<h1><span style="color: #${colour};">${name}</span> System Info</h1>`
-}
-
-if(system != null & system != "") {
-    renderTitle();
 }
