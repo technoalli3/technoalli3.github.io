@@ -2,7 +2,7 @@ const queryString = window.location.search;
 const system = new URLSearchParams(queryString).get("sys");
 
 const container = document.querySelector('.title');
-const container = document.querySelector('.container');
+const title = document.querySelector('.container');
 
 
 renderTitle();
