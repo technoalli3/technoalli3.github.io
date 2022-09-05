@@ -74,7 +74,7 @@ async function renderFronters() {
     });
     
     let segment = `<form>
-                        <imput type="submit">
+                        <input type="submit" value="Submit">
                     </form>`
 
     let container = document.querySelector('.container');
