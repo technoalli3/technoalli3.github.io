@@ -44,9 +44,9 @@ function backButton() {
                         <input type="submit" value="Go Back">
                     </form>
                     <!--<br>
-                    <a href="systems.html">
+                    <form action="/systems.php">
                         <input type="submit" value="System info">
-                    </a>-->`
+                    </form>`
 
     let goBack = document.querySelector('.goBack');
     goBack.innerHTML = segment;
