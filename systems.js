@@ -17,7 +17,7 @@ async function getSystem() {
 }
 
 async function renderTitle() {
-    let sysObject = getSystem();
+    const sysObject = await getSystem();
     
     let name
     if(sysObject.name != null) {
@@ -33,10 +33,9 @@ async function renderTitle() {
         colour = "FFFFFF";
     }
     
-    title.innerHMTL = `<h1><span style="color: #${colour};">${name}</span> System Info</h1>`
+    title.innerHMTL = `<h1><span style="color: #${colour};">${name}</span> System Info</h1>`;
 }
 
 if (system != null & system != "") {
-    title.innerHTML = `<code>Loading fronters...</code>`
     renderTitle();
 }
