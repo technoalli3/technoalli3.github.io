@@ -16,6 +16,8 @@ async function getSystem() {
 }
 
 async function renderTitle() {
+    getSystem();
+    
     let name
     if(system.name != null) {
         name = system.name;
