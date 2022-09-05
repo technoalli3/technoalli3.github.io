@@ -72,6 +72,11 @@ async function renderFronters() {
 
         html += htmlSegment;
     });
+    
+    let segment = `<form>
+                        <imput type="submit">
+                    </form>`
+    html += segment;
 
     let container = document.querySelector('.container');
     container.innerHTML = html;
