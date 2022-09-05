@@ -71,10 +71,12 @@ async function renderFronters() {
             fronterPronouns = "This fronter has no pronouns set."
         }
         
-        let fronterCreated
+        let dateObject
         if(fronter.created != null) {
-            fronterCreated = Date(fronter.created);
+            dateObject = Date(fronter.created);
         }
+        
+        let fronterCreated =  Date.toLocaleDateString(dateObject);
 
         let htmlSegment = `<div class="fronter">
                             ${avatar}
