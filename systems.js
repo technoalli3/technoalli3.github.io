@@ -16,7 +16,6 @@ async function getSystem() {
 }
 
 async function renderTitle() {
-    getSystem();
     
     let name
     if(system.name != null) {
@@ -34,3 +33,5 @@ async function renderTitle() {
     
     title.innerHMTL = `<h1><span style="color: #${colour};">${name}</span> System Info</h1>`
 }
+
+renderTitle();
