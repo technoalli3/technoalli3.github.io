@@ -72,11 +72,11 @@ async function renderFronters() {
         }
         
         let dateObject
+        let fronterCreated
         if(fronter.created != null) {
             dateObject = Date(fronter.created);
+            fronterCreated =  dateObject.toLocaleDateString();
         }
-        
-        let fronterCreated =  Date.toLocaleDateString(dateObject);
 
         let htmlSegment = `<div class="fronter">
                             ${avatar}
