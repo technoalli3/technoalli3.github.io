@@ -44,7 +44,7 @@ function backButton() {
                         <input type="submit" value="Go Back">
                     </form>
                     <br>
-                    <form action="systems.php">
+                    <form action="/systems.html">
                         <input type="submit" value="System info">
                     </form>`
 
