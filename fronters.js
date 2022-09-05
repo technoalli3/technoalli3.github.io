@@ -37,7 +37,7 @@ async function renderFronters() {
         document.getElementById("tabname").innerHTML = str
         
         if(colour != null) {//has colour
-            nameContainer.innerHTML = `<h1 id="title">
+            nameContainer.innerHTML = `<h1 class="title">
                                             <h1 style = "color: #${colour};">${sysObject.name}</h1>
                                             Fronter Display
                                         </h1>`
