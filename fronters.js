@@ -81,7 +81,7 @@ async function renderFronters() {
         */
         
         let isAlli = false
-        if(system="jouig") {
+        if(system == "jouig") {
             isAlli = true;
         }
 
