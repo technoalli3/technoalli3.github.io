@@ -29,7 +29,7 @@ a {
 /* Embed-style fronter items */
 .fronter {
     background-color: #2f3136;
-    border-radius: 5px;
+    border-radius: 5%;
     border-left: 4px solid #202225;
     width: 300px;
     overflow: auto;
