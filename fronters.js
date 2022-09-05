@@ -44,8 +44,8 @@ function backButton() {
                         <input type="submit" value="Go Back">
                     </form>
                     <br>
-                    <form action="/systems.html?v=${system}">
-                        <button type="submit">System info</button>
+                    <form action="/systems.html" method="get">
+                        <button name="sys" type="submit">System info</button>
                     </form>`
 
     let goBack = document.querySelector('.goBack');
