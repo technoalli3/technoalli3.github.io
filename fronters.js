@@ -81,7 +81,7 @@ async function renderFronters() {
                             <h2>${fronter.name}</h2>
                             <p>${fronterPronouns}</p>
                             <p>${fronterCreated}</p>
-                            <p>$
+                            <p>
                         </div>
                         <br style="clear:both">`;
 
