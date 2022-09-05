@@ -73,7 +73,7 @@ async function renderFronters() {
         
         let fronterCreated
         if(fronter.created != null) {
-            fronterCreated = fronter.created
+            fronterCreated = Date(fronter.created);
         }
 
         let htmlSegment = `<div class="fronter">
