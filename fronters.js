@@ -28,17 +28,26 @@ async function renderFronters() {
     
     const sysObject = await getSystem();
     const nameContainer = document.getElementById("name-container");
+    let colour = sysObject.color;//gets sys colour
     
-    if(sysObject.name != null) {
+    if(sysObject.name != null) {//if system is named use sysname
         let str = sysObject.name;
         str += " Fronter Display";
         
         document.getElementById("tabname").innerHTML = str
-        nameContainer.innerHTML = `<h1>${str}</h1>`
-    } else {
-        document.getElementById("tabname").innerHTML = system + " Fronter Display"
         
-        nameContainer.innerHTML = `<h1><code> ${system} </code> Fronter Display</h1>`
+        if(colour != null) {//has colour
+            nameContainer.innerHTML = `<h1 style = "font-colour: #${colour};">${str}</h1>`
+        } else {
+            nameContainer.innerHTML = `<h1>${str}</h1>`
+        }
+    } else {//no sysname, use sysID
+        document.getElementById("tabname").innerHTML = system + " Fronter Display"
+        if(colour != null) {//has colour
+            nameContainer.innerHTML = `<h1><code style = "font-colour: #${colour};"> ${system} </code> Fronter Display</h1>`
+        } else {
+            nameContainer.innerHTML = `<h1><code> ${system} </code> Fronter Display</h1>`
+        }
     }
     
     
@@ -51,15 +60,14 @@ async function renderFronters() {
         if (fronter.avatar_url != null) {
             avatar = `<img src="${fronter.avatar_url}" alt="Profile Picture", style="float:left;">`
         }
-        else {
+        else {//no profile picture
             avatar = `<img src="blank.png" alt="Profile Picture", style="float:left;">`
         }
         
         let fronterPronouns
         if(fronter.pronouns != null) {
             fronterPronouns = fronter.pronouns
-        } else {
-            //fronterPronouns = fronter.display_name
+        } else {//no pronouns
             fronterPronouns = "This fronter has no pronouns set."
         }
 
@@ -73,6 +81,7 @@ async function renderFronters() {
         html += htmlSegment;
     });
     
+    //back button
     let segment = `<form>
                         <input type="submit" value="Go Back">
                     </form>`
