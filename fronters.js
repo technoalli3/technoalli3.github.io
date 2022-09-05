@@ -94,6 +94,9 @@ async function renderFronters() {
     let segment = `<form>
                         <input type="submit" value="Go Back">
                     </form>`
+    segment += `<form style="float:right;">
+                    <input type="submit" value="System members">
+                </form>`
 
     let container = document.querySelector('.container');
     container.innerHTML = html;
