@@ -37,14 +37,14 @@ async function renderFronters() {
         document.getElementById("tabname").innerHTML = str
         
         if(colour != null) {//has colour
-            nameContainer.innerHTML = `<h1 style = "font-colour: #${colour};">${str}</h1>`
+            nameContainer.innerHTML = `<h1 style = "font-color: #${colour};">${str}</h1>`
         } else {
             nameContainer.innerHTML = `<h1>${str}</h1>`
         }
     } else {//no sysname, use sysID
         document.getElementById("tabname").innerHTML = system + " Fronter Display"
         if(colour != null) {//has colour
-            nameContainer.innerHTML = `<h1><code style = "font-colour: #${colour};"> ${system} </code> Fronter Display</h1>`
+            nameContainer.innerHTML = `<h1><code style = "font-color: #${colour};"> ${system} </code> Fronter Display</h1>`
         } else {
             nameContainer.innerHTML = `<h1><code> ${system} </code> Fronter Display</h1>`
         }
