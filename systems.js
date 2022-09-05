@@ -14,3 +14,21 @@ async function getSystem() {
 
     return await response.json()
 }
+
+async function renderTitle() {
+    let name
+    if(system.name != null) {
+        name = system.name;
+    } else {
+        name = system;
+    }
+    
+    let colour
+    if(system.color != null) {
+        colour = system.color;
+    } else {
+        colour = "FFFFFF";
+    }
+    
+    title.innerHMTL = `<h1><span style="color: #${colour};">${name}</span> System Info</h1>`
+}
