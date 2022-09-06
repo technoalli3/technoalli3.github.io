@@ -11,7 +11,7 @@ async function getSystem() {
     let response = await fetch("https://api.pluralkit.me/v2/systems/" + system);
 
     if (response.status != 200) {
-        showInput(response.status)
+        console.log(response.status)
         return null
     }
 
@@ -19,21 +19,28 @@ async function getSystem() {
 }
 
 async function renderTitle() {
-    let sysObject = await getSystem();
-    
-    let name
+    const sysObject = await getSystem();
+    console.log(sysObject)
+
+    let name;
     if(sysObject.name != null) {
         name = sysObject.name;
     } else {
         name = system;
     }
     
-    let colour
+    let colour;
     if(sysObject.color != null) {
         colour = sysObject.color;
     } else {
         colour = "FFFFFF";
     }
+
+    console.log(colour)
+    console.log(name)
     
-    title.innerHMTL = `<h1 style="color: #${colour};">System Info</h1>`;
+    title.innerHMTL = `<h1>
+                        <span style="color: #${colour};">
+                            ${name}
+                        </span> System Info</h1>`;
 }
