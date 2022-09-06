@@ -5,7 +5,7 @@ const system = new URLSearchParams(queryString).get("sys");
 renderTitle();
 renderAttributes();
 renderMembers();
-
+backButton();
 
 async function getSystem() {
     let response = await fetch("https://api.pluralkit.me/v2/systems/" + system);
@@ -125,4 +125,12 @@ async function renderMembers() {
         html += htmlSegment;
     }
     document.getElementById("members").innerHTML = html;
+}
+
+async function backButton() {
+    let html = `<form action="index.html" method="get">
+                        <button name="sys" value="${system}" type="submit">Go Back</button>
+                    </form>`
+
+    document.getElementById("back").innerHTML = html;
 }
