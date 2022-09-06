@@ -20,7 +20,6 @@ async function getSystem() {
 
 async function renderTitle() {
     const sysObject = await getSystem();
-    console.log(sysObject)
 
     let name;
     if(sysObject.name != null) {
@@ -39,8 +38,7 @@ async function renderTitle() {
     console.log(colour)
     console.log(name)
     
-    title.innerHMTL = `<h1>
-                        <span style="color: #${colour};">
-                            ${name}
-                        </span> System Info</h1>`;
+    const html = `<h1><span style="color: #${colour};">${name}</span> System Info</h1>`;
+
+    title.innerHMTL = html;
 }
