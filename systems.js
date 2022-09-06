@@ -3,6 +3,8 @@ const system = new URLSearchParams(queryString).get("sys");
 
 
 renderTitle();
+renderAttributes();
+
 
 async function getSystem() {
     let response = await fetch("https://api.pluralkit.me/v2/systems/" + system);
@@ -37,5 +39,22 @@ async function renderTitle() {
 }
 
 async function renderAttributes() {
-    
+    const sysObject = await getSystem();
+    let html
+
+    if(sysObject.description == null) {
+        html = "No description.";
+    } else {
+        html = await getDescription(sysObject);
+    }
+
+
+
+    document.getElementById("attributes").innerHTML = html;
+}
+
+
+
+async function getDescription(sysObject) {
+    return marked.parse(sysObject.description);
 }
