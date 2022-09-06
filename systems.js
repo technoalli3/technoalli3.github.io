@@ -90,7 +90,7 @@ async function renderMembers() {
     const members = await getMembers();
 
     console.log(members)
-    let html
+    let html = "";
 
     for(let i = 0; i < members.length; i++) {
         // Avatar logic
@@ -119,9 +119,8 @@ async function renderMembers() {
         let htmlSegment = `<div class="fronter grid-item">
                             ${avatar}
                             <h2>${members[i].name}</h2>
-                            <p>${memberPronouns}</p>
-                        </div>
-                        <br style="clear:both">`;
+                            <p style="margin-right:3%">${memberPronouns}</p>
+                        </div>`;
 
         html += htmlSegment;
     }

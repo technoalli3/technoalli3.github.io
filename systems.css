@@ -31,6 +31,15 @@ a {
     background-color: #2f3136;
     border-radius: 5%;
     border-left: 4px solid #202225;
-    width: 40%;
-    overflow: auto;
+    overflow-y: auto;
+}
+
+.grid-container {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 25% 25% 25% 25%;
+}
+
+.grid-item {
+    margin: 3%;
 }
