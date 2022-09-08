@@ -45,12 +45,7 @@ async function renderTitle() {
     }
 
     let html
-
-    if(sysObject.avatar_url != null) {
-        html = `<h1 style = "background-image:url('${sysObject.avatar_url}');"><span style="color: #${colour};">${name}</span> System Info</h1>`;
-    } else {
-        html = `<h1><span style="color: #${colour};">${name}</span> System Info</h1>`;
-    }
+    html = `<h1><span style="color: #${colour};">${name}</span> System Info</h1>`;
 
     document.getElementById("systemTitle").innerHTML = html;
 }
@@ -133,7 +128,7 @@ async function renderMembers() {
                             ${avatar}
                             <h2>${members[i].name}</h2>
                             <h4 style="margin-right:3%">${memberPronouns}</h4>
-                            <p>${description}</p>
+                            <div>${description}</div>
                         </div>`;
 
         html += htmlSegment;
