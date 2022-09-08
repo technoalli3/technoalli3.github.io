@@ -170,6 +170,7 @@ function showInput(reason) {
                             <label name="sys">${label}</label>
                             <input type="text" name="sys">
                             <input type="submit" value="Submit">
+                            <button formaction="systems.html">System Info</button>
                         </form>`
 }
 
