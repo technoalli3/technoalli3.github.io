@@ -115,11 +115,25 @@ async function renderMembers() {
             memberPronouns = "This member has no pronouns set."
         }
 
+        let memberColour
+
+        if(members[i].color != null) {
+            memberColour = members[i].color;
+        } else {
+            memberColour = "202225";
+        }
+
+        let description = "";
+        if(members[i].description != null) {
+            description = marked.parse(members[i].description);
+        }
+
         // Build member item
-        let htmlSegment = `<div class="fronter grid-item">
+        let htmlSegment = `<div style="border-left: 4px solid #${memberColour};" class="fronter grid-item">
                             ${avatar}
                             <h2>${members[i].name}</h2>
-                            <p style="margin-right:3%">${memberPronouns}</p>
+                            <h4 style="margin-right:3%">${memberPronouns}</h4>
+                            <p>${description}</p>
                         </div>`;
 
         html += htmlSegment;
