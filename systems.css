@@ -33,14 +33,14 @@ a {
     overflow-y: auto;
 }
 
-.grid-container {
-    display: grid;
-    width: 100%;
-    grid-template-columns: 25% 25% 25% 25%;
+.system-container {
+    display: flex;
+    flex-flow: wrap;
 }
 
 .grid-item {
     margin: 3%;
+    max-width: 300px;
 }
 
 .card-container {
