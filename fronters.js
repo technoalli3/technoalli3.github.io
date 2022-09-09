@@ -58,7 +58,12 @@ async function renderFronters() {
     const fronters = await getFronters();
 
     // Handle system being switched out
-    if (fronters.members.length == 0) {
+    
+    if (fronters == null) {
+        container.innerHTML = `<p>This system doesn't have any fronting status set.</p>`
+        backButton()
+        return
+    } else if (fronters.members.length == 0) {
         container.innerHTML = `<p>This system is currently switched out.</p>`
         backButton()
         return
