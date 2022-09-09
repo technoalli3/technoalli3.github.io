@@ -110,6 +110,9 @@ async function renderMembers() {
             memberPronouns = "This member has no pronouns set."
         }
 
+        let memberId
+        memberId = members[i].id;
+
         let memberColour
 
         if(members[i].color != null) {
@@ -130,6 +133,7 @@ async function renderMembers() {
                                 <div>
                                     <h2>${members[i].name}</h2>
                                     <h4 style="margin-right:3%">${memberPronouns}</h4>
+                                    <h4 style="margin-right:3%">Member ID: <code id="member-id">${memberId}</code></h4>
                                 </div>
                                 <div class="member-description">${description}</div>
                             </div>
