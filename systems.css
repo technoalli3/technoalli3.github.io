@@ -42,3 +42,15 @@ a {
 .grid-item {
     margin: 3%;
 }
+
+.card-container {
+    display: grid;
+    width: 100%;
+    grid-template-columns: auto auto;
+}
+
+.member-description {
+    grid-column: 1 / span 2;
+    padding-left: 3%;
+    padding-right: 3%;
+}

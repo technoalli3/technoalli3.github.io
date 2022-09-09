@@ -125,10 +125,14 @@ async function renderMembers() {
 
         // Build member item
         let htmlSegment = `<div style="border-left: 4px solid #${memberColour};" class="fronter grid-item">
-                            ${avatar}
-                            <h2>${members[i].name}</h2>
-                            <h4 style="margin-right:3%">${memberPronouns}</h4>
-                            <div>${description}</div>
+                            <div class="card-container">
+                                ${avatar}
+                                <div>
+                                    <h2>${members[i].name}</h2>
+                                    <h4 style="margin-right:3%">${memberPronouns}</h4>
+                                </div>
+                                <div class="member-description">${description}</div>
+                            </div>
                         </div>`;
 
         html += htmlSegment;
