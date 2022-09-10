@@ -179,7 +179,14 @@ function showInput(reason) {
                         </form>
                         <br>
                         <hr style="width:50%;margin-right:50%;">
-                        <h3>Or setup your system <a href="systems.html">[here]</a></h3>`
+                        <h3>Or modify your system by entering your PK token down below:</h3>
+                        <form action="member_setup.html">
+                            <label name="token">PK Token:</label>
+                            <input type="text" name="token">
+                            <input type="submit" value="Submit">
+                        <form>
+                        <br>
+                        <a href="safety.html">Is this secure?</a>`
 }
 
 // Handles which display appears on the page
