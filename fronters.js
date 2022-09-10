@@ -176,7 +176,10 @@ function showInput(reason) {
                             <input type="text" name="sys">
                             <input type="submit" value="Submit">
                             <button formaction="systems.html">System Info</button>
-                        </form>`
+                        </form>
+                        <br>
+                        <hr style="width:50%;margin-right:50%;">
+                        <h3>Or setup your system <a href="systems.html">[here]</a></h3>`
 }
 
 // Handles which display appears on the page
