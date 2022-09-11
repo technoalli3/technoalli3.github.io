@@ -34,10 +34,12 @@ async function renderMembers() {
                                         <h3><code>${members[i].id}</code></h3>
                                     </div>
                                     <div id="button">
-                                        <button>Edit</button>
+                                        <form action="member_editor.html">
+                                            <button type="submit" name="members" value="${members[i].id}">Edit</button>
+                                        </form>
                                     </div>
                                 </div>
-                            </div>`;
+                            </div>`
         html += htmlSegment;
     }
     document.getElementById("members").innerHTML = html;
