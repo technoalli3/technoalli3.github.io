@@ -22,25 +22,48 @@ async function renderName() {
 
 async function renderFields() {
     const memberObject = await getMember();
+
+    let birthday = "";
+    if(memberObject.birthday != null) {
+        birthday = memberObject.birthday;
+    }
+    let colour = "";
+    if(memberObject.color != null) {
+        colour = memberObject.color;
+    }
+    let pronouns = "";
+    if(memberObject.pronouns != null) {
+        pronouns = memberObject.pronouns;
+    }
+    let banner = "";
+    if(memberObject.banner_url != null) {
+        banner = memberObject.banner_url;
+    }
+    let description = "";
+    if(memberObject.description != null) {
+        description = memberObject.description;
+    }
+
+
     let html = `<form>
                     <label>Name:</label>
                     <input id="i1" type="text" name="name" value="${memberObject.name}">
                     <br>
                     <label>Birthday:</label>
-                    <input id="i2" type="text" name="birthday" value="${memberObject.birthday}">
+                    <input id="i2" type="text" name="birthday" value="${birthday}">
                     <br>
                     <label>Colour:</label>
-                    <input id="i3" type="text" name="color" value="${memberObject.color}">
+                    <input id="i3" type="text" name="color" value="${colour}">
                     <br>
                     <label>Pronouns:</label>
-                    <input id="i4" type="text" name="pronouns" value="${memberObject.pronouns}">
+                    <input id="i4" type="text" name="pronouns" value="${pronouns}">
                     <br>
                     <label>Banner:</label>
-                    <input id="i5" type="text" name="banner" value="${memberObject.banner_url}">
-                    <button>Upload</button>
+                    <input id="i5" type="text" name="banner" value="${banner}">
+                    <input type="file">
                     <br>
                     <label>Description:</label>
-                    <input id="i6" id="description" type="text" name="description" value="${memberObject.description}">
+                    <input id="i6" id="description" type="text" name="description" value="${description}">
                     <br>
                     <label>Proxy Tags:</label>
                     <input id="i7" id="proxy" type="text" name="description" value="${memberObject.proxy_tags}">
@@ -67,15 +90,9 @@ async function buildObject() {
     let token = document.getElementById("token").value;
 
     memberObject.name = name;
-    if(birthday != "null") {
-        memberObject.birthday = birthday;
-    }
-    if(colour != "null") {
-        memberObject.color = colour;
-    }
-    if(pronouns != "null") {
-        memberObject.pronouns = pronouns;
-    }
+    memberObject.birthday = birthday;
+    memberObject.color = colour;
+    memberObject.pronouns = pronouns;
     memberObject.banner_url = banner;
     memberObject.description = description;
 
@@ -87,8 +104,11 @@ async function buildObject() {
     xhr.setRequestHeader("Authorization", token);
 
     xhr.onreadystatechange = () => { // Call a function when the state changes.
-        if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-        // Request finished. Do processing here.
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if(xhr.status === 200) {
+                let html = `<h2>Member successfully updated!</h2>`
+                document.getElementById("prompts").innerHTML = html;
+            }
         }
     }
     xhr.send(JSON.stringify(memberObject));
