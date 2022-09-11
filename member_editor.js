@@ -43,6 +43,10 @@ async function renderFields() {
     if(memberObject.description != null) {
         description = memberObject.description;
     }
+    let avatar = "";
+    if(memberObject.avatar_url != null) {
+        avatar = memberObject.avatar_url;
+    }
 
 
     let html = `<form>
@@ -60,7 +64,6 @@ async function renderFields() {
                     <br>
                     <label>Banner:</label>
                     <input id="i5" type="text" name="banner" value="${banner}">
-                    <input type="file">
                     <br>
                     <label>Description:</label>
                     <input id="i6" id="description" type="text" name="description" value="${description}">
@@ -68,12 +71,24 @@ async function renderFields() {
                     <label>Proxy Tags:</label>
                     <input id="i7" id="proxy" type="text" name="description" value="${memberObject.proxy_tags}">
                     <br>
+                    <label>Avatar:</label>
+                    <input id="i8" id="avatar" type="text" name="description" value="${avatar}">
+                    <br>
                     <br>
                     <label>Please enter your PK token:</label>
                     <input id="token" type="text" name="token">                            
                 </form>
-                <button onclick="buildObject()">Submit</button>`
-
+                <button onclick="buildObject()">Submit</button>
+                <hr style="width:50%; margin-right:50%;">
+                <br>`;
+                if(memberObject.banner_url != null) {
+                    console.log(memberObject.banner_url)
+                    html += `<img src="${memberObject.banner_url}">`
+                }
+                if(memberObject.avatar_url != null) {
+                    console.log(memberObject.avatar_url)
+                    html += `<img id="avatarPreview" src="${memberObject.avatar_url}" style="max-width:200px">`
+                }
     document.getElementById("fields").innerHTML = html;
 }
 
@@ -87,7 +102,10 @@ async function buildObject() {
     let banner = document.getElementById("i5").value;
     let description = document.getElementById("i6").value;
     let proxy_tags = document.getElementById("i7").value;
+    let avatar = document.getElementById("i8").value;
     let token = document.getElementById("token").value;
+
+    console.log(banner)
 
     memberObject.name = name;
     memberObject.birthday = birthday;
@@ -95,6 +113,7 @@ async function buildObject() {
     memberObject.pronouns = pronouns;
     memberObject.banner_url = banner;
     memberObject.description = description;
+    memberObject.avatar_url = avatar;
 
     const xhr = new XMLHttpRequest();
     xhr.open("PATCH", 'https://api.pluralkit.me/v2/members/' + memberObject.id, true);
@@ -106,12 +125,15 @@ async function buildObject() {
     xhr.onreadystatechange = () => { // Call a function when the state changes.
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if(xhr.status === 200) {
-                let html = `<h2>Member successfully updated!</h2>`
+                let html = `<h2 style="animation-name:fade; animation-duration:3s; opacity: 0%;">Member successfully updated!</h2>`
+                document.getElementById("prompts").innerHTML = html;
+                document.getElementById("avatarPreview").innerHTML = `<img src ="${memberObject.avatar_url}">`;
+            }
+            if(xhr.status === 401) {
+                let html = `<h2 style="animation-name:fade; animation-duration:3s; opacity: 0%;">Token is missing or invalid</h2>`
                 document.getElementById("prompts").innerHTML = html;
             }
         }
     }
-    xhr.send(JSON.stringify(memberObject));
-    
-    
+    xhr.send(JSON.stringify(memberObject));   
 }
