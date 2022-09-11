@@ -179,10 +179,10 @@ function showInput(reason) {
                         </form>
                         <br>
                         <hr style="width:50%;margin-right:50%;">
-                        <h3>Or modify your system by entering your PK token down below:</h3>
+                        <h3>Or modify your system by entering your system ID down below:</h3>
                         <form action="member_setup.html">
-                            <label name="token">PK Token:</label>
-                            <input type="text" name="token">
+                            <label name="sys">System ID:</label>
+                            <input type="text" name="sys">
                             <input type="submit" value="Submit">
                         <form>
                         <br>

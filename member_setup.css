@@ -21,3 +21,40 @@ a {
     font-family: 'Baloo Chettan 2', cursive;
     font-size: 40px;
 }
+
+.member-list {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 50%;
+}
+
+.subgrid {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+}
+
+code {
+    font-family: 'Share Tech Mono', monospace;
+}
+
+#subgrid-item {
+    border-right-style:dotted;
+    border-right-width: 4px;
+    border-color:#E74C3C;
+    margin-right:25%;
+}
+
+#table-item {
+    border-style:solid;
+    border-left-width: 6px;
+    border-right-width: 6px;
+    border-color:black;
+    background-color: #424949;
+}
+
+#button {
+    display: block;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left:25%;
+}
