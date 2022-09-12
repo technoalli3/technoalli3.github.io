@@ -49,50 +49,68 @@ async function renderFields() {
     }
 
 
-    let html = `<form>
-                    <label>Name:</label>
-                    <input id="i1" type="text" name="name" value="${memberObject.name}">
-                    <br>
-                    <label>Birthday:</label>
-                    <input id="i2" type="text" name="birthday" value="${birthday}">
-                    <br>
-                    <label>Colour:</label>
-                    <input id="i3" type="text" name="color" value="${colour}">
-                    <br>
-                    <label>Pronouns:</label>
-                    <input id="i4" type="text" name="pronouns" value="${pronouns}">
-                    <br>
-                    <label>Banner:</label>
-                    <input id="i5" type="text" name="banner" value="${banner}">
-                    <br>
-                    <label>Description:</label>
-                    <input id="i6" id="description" type="text" name="description" value="${description}">
-                    <br>
-                    <label>Proxy Tags:</label>
-                    <input id="i7" id="proxy" type="text" name="description" value="${memberObject.proxy_tags}">
-                    <br>
-                    <label>Avatar:</label>
-                    <input id="i8" id="avatar" type="text" name="description" value="${avatar}">
-                    <br>
-                    <br>
-                    <label>Please enter your PK token:</label>
-                    <input id="token" type="text" name="token">                            
-                </form>
-                <button onclick="buildObject()">Submit</button>
+    let html = `<div id="input-grid">
+                    <div>
+                        <form>
+                            <label>Name:</label>
+                            <input id="i1" type="text" name="name" value="${memberObject.name}">
+                            <br>
+                            <label>Birthday:</label>
+                            <input id="i2" type="text" name="birthday" value="${birthday}">
+                            <br>
+                            <label>Colour:</label>
+                            <input id="i3" type="text" name="color" value="${colour}">
+                            <br>
+                            <label>Pronouns:</label>
+                            <input id="i4" type="text" name="pronouns" value="${pronouns}">
+                            <br>
+                            <label>Banner:</label>
+                            <input id="i5" type="text" name="banner" value="${banner}">
+                            <br>
+                            <label>Description:</label>
+                            <input id="description" type="text" name="description" value="${description}">
+                            <br>
+                            <label>Proxy Tags:</label>
+                            <input id="i7" id="proxy" type="text" name="description" value="${memberObject.proxy_tags}">
+                            <br>
+                            <label>Avatar:</label>
+                            <input id="i8" id="avatar" type="text" name="description" value="${avatar}">
+                            <br>
+                            <br>
+                            <label>Please enter your PK token:</label>
+                            <input id="token" type="text" name="token">                            
+                        </form>
+                    </div>
+                </div>`
+                
+                let submit = `<button style="vertical-align:middle;" onclick="buildObject()">Submit</button>
+
                 <hr style="width:50%; margin-right:50%;">
-                <br>`;
+                <br>
+                <div id="prompts">
+                    <br>
+                </div>`
+
+
+
+                let preview ="";
                 if(memberObject.banner_url != null) {
                     console.log(memberObject.banner_url)
-                    html += `<img src="${memberObject.banner_url}">`
+                    preview += `<img src="${memberObject.banner_url}">`
                 }
                 if(memberObject.avatar_url != null) {
                     console.log(memberObject.avatar_url)
-                    html += `<img id="avatarPreview" src="${memberObject.avatar_url}" style="max-width:200px">`
+                    preview += `<h3>Avatar</h3><img id="avatarPreview" src="${memberObject.avatar_url}" style="max-width:200px">`
                 }
     document.getElementById("fields").innerHTML = html;
+    document.getElementById("preview").innerHTML = preview;
+    document.getElementById("submit").innerHTML = submit;
 }
 
 async function buildObject() {
+    let html = `<div id="status-waiting"></div>`
+    document.getElementById("status").innerHTML = html;
+
     const memberObject = await getMember();
 
     let name = document.getElementById("i1").value;
@@ -100,7 +118,7 @@ async function buildObject() {
     let colour = document.getElementById("i3").value;
     let pronouns = document.getElementById("i4").value;
     let banner = document.getElementById("i5").value;
-    let description = document.getElementById("i6").value;
+    let description = document.getElementById("description").value;
     let proxy_tags = document.getElementById("i7").value;
     let avatar = document.getElementById("i8").value;
     let token = document.getElementById("token").value;
@@ -125,12 +143,14 @@ async function buildObject() {
     xhr.onreadystatechange = () => { // Call a function when the state changes.
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if(xhr.status === 200) {
-                let html = `<h2 style="animation-name:fade; animation-duration:3s; opacity: 0%;">Member successfully updated!</h2>`
+                let html = `<h2 style="animation-name:fade; animation-duration:3.5s; opacity: 0%;">Member successfully updated!</h2>`
                 document.getElementById("prompts").innerHTML = html;
+                document.getElementById("status").innerHTML = `<div id="status-success"></div>`;
                 document.getElementById("avatarPreview").innerHTML = `<img src ="${memberObject.avatar_url}">`;
             }
             if(xhr.status === 401) {
-                let html = `<h2 style="animation-name:fade; animation-duration:3s; opacity: 0%;">Token is missing or invalid</h2>`
+                let html = `<h2 style="animation-name:fade; animation-duration:3.5s; opacity: 0%;">Token is missing or invalid</h2>`
+                document.getElementById("status").innerHTML = `<div id="status-fail"></div>`;
                 document.getElementById("prompts").innerHTML = html;
             }
         }

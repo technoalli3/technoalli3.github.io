@@ -20,7 +20,21 @@ async function getSystem() {
 async function renderMembers() {
     const members = await getMembers();
     console.log(members)
-    let html = "";
+    let html = `<div style="background-color: #5499C7" id="table-item">
+                    <div class="subgrid">
+                        <div id="subgrid-item" style="background-color:#F39C12">
+                            <h3 style="margin-left:10%">Name</h3>
+                        </div>
+                        <div id="subgrid-item">
+                            <h3><code>ID</code></h3>
+                        </div>
+                        <div id="button">
+                            <form action="member_editor.html">
+                                <h3>Edit Member</h3>
+                            </form>
+                        </div>
+                    </div>
+                </div>`
     for(let i = 0; i < members.length; i++) {
         let memberId
         memberId = members[i].id;

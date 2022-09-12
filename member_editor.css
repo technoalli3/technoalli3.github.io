@@ -22,7 +22,8 @@ a {
 }
 input {
     font-size:16px;
-    width:auto;
+    width:25%;
+    height:auto;
 }
 label {
     font-size:20px;
@@ -31,6 +32,61 @@ label {
     width:25%;
     height:25%;
     text-align: left;
+    overflow-wrap:normal;
+    overflow:auto;
+}
+
+#status {
+    width:40px;
+    height:40px;
+    margin-top:3%;
+    margin-bottom:3%;
+    background-color: #292a2c;
+}
+
+#status-waiting {   
+    width:40px;
+    height:40px;
+    margin-top:3%;
+    margin-bottom:3%;
+    background-color: gold;
+    animation-name: spin;
+    animation-duration: 2000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+#status-success {   
+    width:40px;
+    height:40px;
+    margin-top:3%;
+    margin-bottom:3%;
+    background-color: green;
+}
+
+#status-fail {   
+    width:40px;
+    height:40px;
+    margin-top:3%;
+    margin-bottom:3%;
+    background-color: red;
+}
+
+#input-grid {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+#submit {
+    margin-top:3%;
+}
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
 }
 
 @keyframes fade {
