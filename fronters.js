@@ -105,6 +105,7 @@ async function renderFronters() {
     // HTMl Builder
     let html = '';
     fronters.members.forEach(fronter => {
+        console.log(fronter)
         // Avatar logic
         let avatar
 
