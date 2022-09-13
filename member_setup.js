@@ -50,6 +50,7 @@ async function renderMembers() {
                                     </div>
                                     <div id="button">
                                         <form action="member_editor.html">
+                                            <input type="hidden" name="sys" value="${system}"></input>
                                             <button type="submit" name="members" value="${members[i].id}">Edit</button>
                                         </form>
                                     </div>

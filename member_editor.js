@@ -1,9 +1,10 @@
 const queryString = window.location.search;
 const member = new URLSearchParams(queryString).get("members");
+const system = new URLSearchParams(queryString).get("sys");
 
 //order of operations
 
-renderName();
+renderTitle();
 renderFields();
 
 
@@ -15,9 +16,13 @@ async function getMember() {
     return await response.json()
 }
 
-async function renderName() {
+async function renderTitle() {
     const memberObject = await getMember();
     document.getElementById("name").innerHTML = memberObject.name;
+    let html = `<form action="member_setup.html">
+                    <button type="submit" name="sys" value="${system}">Go Back</button>
+                </form>`
+    document.getElementById("back").innerHTML = html;
 }
 
 async function renderFields() {
