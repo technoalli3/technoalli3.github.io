@@ -85,14 +85,24 @@ async function newMember() {
             if(xhr.status === 200) {
                 html = `<div id="status-success"></div>`
                 document.getElementById("status").innerHTML = html;
+                html = `<h2 id="error-message">Member successfully created!</h2>`
+                document.getElementById("error-field").innerHTML = html;
                 
                 console.log(xhr.response)
                 let returnedMember = xhr.response;
 
             }
-            if(xhr.status === 200) {
-                html = `<div id="status-success"></div>`
+            if(xhr.status === 401) {
+                html = `<div id="status-fail"></div>`
                 document.getElementById("status").innerHTML = html;
+                html = `<h2 id="error-message">Token is invalid</h2>`
+                document.getElementById("error-field").innerHTML = html;
+            }
+            if(xhr.status === 403) {
+                html = `<div id="status-fail"></div>`
+                document.getElementById("status").innerHTML = html;
+                html = `<h2 id="error-message">Some of your information is invalid</h2>`
+                document.getElementById("error-field").innerHTML = html;
             }
         }
     }

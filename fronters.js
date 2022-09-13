@@ -169,25 +169,20 @@ function showInput(reason) {
     else if (reason == null) {
         // No system ID provided
         label = "Please enter a system ID:"
+
     };
 
     // Create form for inputting system ID
     container.innerHTML = `<form>
-                            <label name="sys">${label}</label>
-                            <input type="text" name="sys">
+                            <label name="sys">${label}
+                                <input type="text" name="sys">
+                            </label>
                             <input type="submit" value="Submit">
-                            <button formaction="systems.html">System Info</button>
                         </form>
                         <br>
-                        <hr style="width:50%;margin-right:50%;">
-                        <h3>Or modify your system by entering your system ID down below:</h3>
-                        <form action="member_setup.html">
-                            <label name="sys">System ID:</label>
-                            <input type="text" name="sys">
-                            <input type="submit" value="Submit">
-                        <form>
-                        <br>
-                        <a href="safety.html">Is this secure?</a>`
+                        <form action="index.html">
+                            <button type="submit">Go Back</button>
+                        </form>`
 }
 
 // Handles which display appears on the page

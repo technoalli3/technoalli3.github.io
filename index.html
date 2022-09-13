@@ -2,28 +2,39 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Chettan+2&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="fronters.css">
+    <link rel="stylesheet" href="index.css">
     
     <title id="tabname">
-        System Fronter Display
+        Pluralkit Dashboard
     </title>
     <link rel="icon" type="image/x-icon" href="favicon.png">
 </head>
 
 <body>
-    <div class="title" id="name-container">
+    <div class="title">
         <h1>
-            System Fronter Display
+            Pluralkit Dashboard Home
         </h1>
     </div>
     <hr style="width:25%; margin-left:0px; margin-right:auto;">
-    
-    <div class="container"></div>
     <br>
-    <div class="goBack"></div>
+    <div style="width:25%">
+        <div id="button-container">
+            <form action="fronters.html">
+                <button class="home">Fronter Display</button>
+            </form>
+
+            <button id="system" class="home" onclick="systemInput()">System Info</button>
+
+            <button id="setup" class="home" onclick="setupInput()">Modify System</button>
+            
+            <button id="settings" class="home" onclick="settingsInput()">Fronter Display</button>
+        </div>
+    </div>
+    <br>
+    <div id="input-fields"></div>
 </body>
 
 <footer>
-    <h4 style="font-style:italic;"><a href="credits.html">Credits</a></h4>
-    <script src="fronters.js"></script>
+    <script src="index.js"></script>
 </footer>

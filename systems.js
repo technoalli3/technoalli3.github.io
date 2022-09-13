@@ -1,9 +1,14 @@
 const queryString = window.location.search;
 const system = new URLSearchParams(queryString).get("sys");
+const home = new URLSearchParams(queryString).get("home");
+
+
 renderTitle();
 renderAttributes();
 renderMembers();
 backButton();
+
+
 async function getSystem() {
     let response = await fetch("https://api.pluralkit.me/v2/systems/" + system);
     if (response.status != 200) {
@@ -113,8 +118,16 @@ async function renderMembers() {
 
 
 async function backButton() {
-    let html = `<form action="index.html" method="get">
+    let html
+    if(home == "true") {
+        html = `<form action="index.html">
+                        <button type="submit">Go Back</button>
+                    </form>`
+    } else {
+        html = `<form action="fronters.html" method="get">
                         <button name="sys" value="${system}" type="submit">Go Back</button>
                     </form>`
+    }
+    
     document.getElementById("back").innerHTML = html;
 }
