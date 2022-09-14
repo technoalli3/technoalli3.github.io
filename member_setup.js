@@ -66,7 +66,7 @@ async function getMembers() {
 }
 
 async function renderNewButton() {
-    let html = `<form action="new_member.html">
+    let html = `<form id="new-member" action="new_member.html">
                     <button type="submit" name="sys" value="${system}">Create a new member</button>
                 </form>`
     document.getElementById("new-button").innerHTML = html;

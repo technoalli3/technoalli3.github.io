@@ -58,3 +58,10 @@ code {
     margin-bottom: auto;
     margin-left:25%;
 }
+
+#new-member {
+    position: fixed;
+    z-index: 100;
+    top: 5%;
+    right: 40%;
+}
