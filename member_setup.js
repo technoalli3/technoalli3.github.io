@@ -3,20 +3,11 @@ const system = new URLSearchParams(queryString).get("sys");
 
 
 //order of functions
-getSystem();
 renderMembers();
 renderNewButton();
 
 
 
-
-async function getSystem() {
-    let response = await fetch("https://api.pluralkit.me/v2/systems/" + system);
-    if (response.status != 200) {
-        return null
-    }
-    return await response.json()
-}
 
 async function renderMembers() {
     const members = await getMembers();
