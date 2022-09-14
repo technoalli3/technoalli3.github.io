@@ -174,15 +174,15 @@ function showInput(reason) {
 
     // Create form for inputting system ID
     container.innerHTML = `<form>
-                            <label name="sys">${label}
-                                <input type="text" name="sys">
-                            </label>
-                            <input type="submit" value="Submit">
-                        </form>
-                        <br>
-                        <form action="index.html">
-                            <button type="submit">Go Back</button>
-                        </form>`
+                                <label name="sys">${label}
+                                    <input "text-transform:lowercase" type="text" name="sys">
+                                </label>
+                                <input type="submit" value="Submit">
+                            </form>
+                            <br>
+                            <form action="index.html">
+                                <button type="submit">Go Back</button>
+                            </form>`
 }
 
 // Handles which display appears on the page

@@ -6,7 +6,7 @@ async function systemInput() {
 
     let html = `<form action="systems.html">
                     <label>Enter system ID:
-                        <input required type="text" name="sys"></input>
+                        <input "text-transform:lowercase" required type="text" name="sys"></input>
                     </label>
                     <input type="hidden" name="home" value="true"></input>
                     <button type="submit">Submit</button>
@@ -22,7 +22,7 @@ async function setupInput() {
 
     let html = `<form action="member_setup.html">
                     <label>Enter system ID:
-                        <input required type="text" name="sys"></input>
+                        <input "text-transform:lowercase" required type="text" name="sys"></input>
                     </label>
                     <button type="submit">Submit</button>
                 <form>
@@ -39,7 +39,7 @@ async function settingsInput() {
 
     let html = `<form action="settings.html">
                     <label>Enter system ID:
-                        <input required type="text" name="sys"></input>
+                        <input "text-transform:lowercase" required type="text" name="sys"></input>
                     </label>
                     <br>
                     <label>Enter PK token:
