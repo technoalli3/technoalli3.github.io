@@ -16,6 +16,7 @@ async function getSystem() {
     }
     return await response.json()
 }
+
 async function getMembers() {
     let response = await fetch("https://api.pluralkit.me/v2/systems/" + system + "/members");
     if (response.status != 200) {
@@ -23,6 +24,7 @@ async function getMembers() {
     }
     return await response.json()
 }
+
 async function renderTitle() {
     const sysObject = await getSystem();
     let name;
@@ -42,6 +44,7 @@ async function renderTitle() {
     html = `<h1><span style="color: #${colour};">${name}</span> System Info</h1>`;
     document.getElementById("systemTitle").innerHTML = html;
 }
+
 async function renderAttributes() {
     const sysObject = await getSystem();
     let html
@@ -61,9 +64,11 @@ async function renderAttributes() {
     html += `<h2>System Members:</h2>`
     document.getElementById("attributes").innerHTML = html;
 }
+
 async function getDescription(sysObject) {
     return marked.parse(sysObject.description);
 }
+
 async function renderMembers() {
     const members = await getMembers();
     console.log(members)

@@ -30,3 +30,23 @@ async function setupInput() {
                 <a href="safety.html">Is this secure?</a>`
     document.getElementById("input-fields").innerHTML = html;
 }
+
+async function settingsInput() {
+    document.getElementById("system").style.backgroundColor = "white";
+    document.getElementById("setup").style.backgroundColor = "white";
+
+    document.getElementById("settings").style.backgroundColor = "red";
+
+    let html = `<form action="settings.html">
+                    <label>Enter system ID:
+                        <input required type="text" name="sys"></input>
+                    </label>
+                    <br>
+                    <label>Enter PK token:
+                        <input required type="text" name="token"></input>
+                    </label>
+                    <br>
+                    <button type="submit">Submit</button>
+                <form>`
+    document.getElementById("input-fields").innerHTML = html;
+}

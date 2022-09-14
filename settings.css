@@ -1,0 +1,103 @@
+/* Max avatar size */
+img {
+    max-width: 200px;
+    max-height: 200px;
+    /* border: 2px solid #F0F0F0; */
+    border-radius: 5%;
+    margin-right: 10px;
+}
+
+/* Main page styling */
+body {
+    background-color: #37393f;
+    color: white;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+}
+
+/* Hyperlink styling */
+a {
+    color: #3c95cf;
+}
+
+/* Title styling */
+#title {
+    font-family: 'Baloo Chettan 2', cursive;
+    font-size: 40px;
+}
+
+#read-only {
+    background-color: #ABB2B9;
+}
+
+#status {
+    width:40px;
+    height:40px;
+    margin-top:3%;
+    margin-bottom:3%;
+    background-color: #292a2c;
+    border-radius:25%;
+}
+
+#status-waiting {   
+    width:40px;
+    height:40px;
+    margin-top:3%;
+    margin-bottom:3%;
+    background-color: gold;
+    border-radius:25%;
+    animation-name: spin;
+    animation-duration: 2000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+#status-success {   
+    width:40px;
+    height:40px;
+    margin-top:3%;
+    margin-bottom:3%;
+    border-radius:25%;
+    background-color: #292a2c;
+    animation-name: success-fade;
+    animation-duration: 4s;
+}
+
+#status-fail {   
+    width:40px;
+    height:40px;
+    margin-top:3%;
+    margin-bottom:3%;
+    border-radius:25%;
+    background-color: #292a2c;
+    animation-name: fail-fade;
+    animation-duration: 4s;
+}
+
+#input-grid {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+#submit {
+    margin-top:3%;
+}
+
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+
+@keyframes fade {
+    from {opacity: 100%;}
+    to {opacity: 0%;}
+}
+
+@keyframes success-fade {
+    from {background-color: green;}
+    to {background-color: #292a2c;}
+}
+
+@keyframes fail-fade {
+    from {background-color: red;}
+    to {background-color: #292a2c;}
+}
