@@ -47,7 +47,7 @@ async function renderFields() {
                     <div id="proxytags"></div>
                 </div>`
     document.getElementById("member-container").innerHTML = html;
-
+    
     if(member.color != null) {
         document.getElementById("name").style.borderTopColor = member.color;
     }
