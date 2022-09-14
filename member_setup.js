@@ -11,7 +11,12 @@ renderNewButton();
 
 async function renderMembers() {
     const members = await getMembers();
-    console.log(members)
+    
+    if(members == "404") {
+        displayError();
+        return;
+    }
+
     let html = `<div style="background-color: #5499C7" id="table-item">
                     <div class="subgrid">
                         <div id="subgrid-item" style="background-color:#F39C12">
@@ -54,8 +59,8 @@ async function renderMembers() {
 
 async function getMembers() {
     let response = await fetch("https://api.pluralkit.me/v2/systems/" + system + "/members");
-    if (response.status != 200) {
-        return null
+    if (response.status == 404) {
+        return "404"
     }
     return await response.json()
 }
@@ -65,5 +70,12 @@ async function renderNewButton() {
                     <button type="submit" name="sys" value="${system}">Create a new member</button>
                 </form>`
     document.getElementById("new-button").innerHTML = html;
+}
+
+async function displayError() {
+    let html = `<h2>Invalid system ID. Return to previous page</h2>`
+    document.getElementById("members").innerHTML = html
+    html = `<div></div>`
+    document.getElementById("new-button").innerHTML = html
 }
 

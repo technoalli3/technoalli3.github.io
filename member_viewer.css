@@ -24,3 +24,9 @@ a {
     font-family: 'Baloo Chettan 2', cursive;
     font-size: 40px;
 }
+
+#inner-contents {
+    display: grid;
+    grid-template-rows: auto auto;
+    max-width:50%
+}

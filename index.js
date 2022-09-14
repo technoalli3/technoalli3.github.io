@@ -1,5 +1,6 @@
 async function systemInput() {
     document.getElementById("setup").style.backgroundColor = "white";
+    document.getElementById("member").style.backgroundColor = "white";
     document.getElementById("settings").style.backgroundColor = "white";
 
     document.getElementById("system").style.backgroundColor = "red";
@@ -16,6 +17,7 @@ async function systemInput() {
 
 async function setupInput() {
     document.getElementById("system").style.backgroundColor = "white";
+    document.getElementById("member").style.backgroundColor = "white";
     document.getElementById("settings").style.backgroundColor = "white";
 
     document.getElementById("setup").style.backgroundColor = "red";
@@ -33,6 +35,7 @@ async function setupInput() {
 
 async function settingsInput() {
     document.getElementById("system").style.backgroundColor = "white";
+    document.getElementById("member").style.backgroundColor = "white";
     document.getElementById("setup").style.backgroundColor = "white";
 
     document.getElementById("settings").style.backgroundColor = "red";
@@ -46,6 +49,23 @@ async function settingsInput() {
                         <input required type="text" name="token"></input>
                     </label>
                     <br>
+                    <button type="submit">Submit</button>
+                <form>`
+    document.getElementById("input-fields").innerHTML = html;
+}
+
+async function memberInput() {
+    document.getElementById("system").style.backgroundColor = "white";
+    document.getElementById("settings").style.backgroundColor = "white";
+    document.getElementById("setup").style.backgroundColor = "white";
+
+    document.getElementById("member").style.backgroundColor = "red";
+
+    let html = `<form action="member_viewer.html">
+                    <label>Enter member ID:
+                        <input "text-transform:lowercase" required type="text" name="member"></input>
+                    </label>
+                    <input type="hidden" name="home" value="true"></input>
                     <button type="submit">Submit</button>
                 <form>`
     document.getElementById("input-fields").innerHTML = html;
