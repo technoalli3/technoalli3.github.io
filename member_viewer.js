@@ -72,7 +72,7 @@ async function formatProxies(array) {
         if(array[i].prefix != null) {
             str = array[i].prefix
         }
-        str += " text "
+        str += "text"
         if(array[i].suffix != null) {
             str += array[i].suffix
         }
